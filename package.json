@@ -1,12 +1,10 @@
 {
-  "name": "secret-jesus",
-  "description": "a really cool app",
+  "scripts": {
+ 		"start": "node index.js"
+  },
   "version": "1.0.0",
   "engines": {
     "node": "6.9.1",
     "npm": "3.10.8"
   },
-  "scripts": {
-  "start": "node index.js"
-  }
 }
