@@ -4,21 +4,18 @@ window.onload = getData;
 function getIdentity(foundcity, foundstate, foundcountry){
 	if(foundcountry == "IN") {
 		return "Somya";
-	}
-	if(foundstate == "WA") {	
+	}else if(foundstate == "WA") {	
 		return "Peter";
-	}
-	if(foundstate == "MD") {
+	} else if(foundstate == "MD") {
 		return "Annie";
-	}
-	if(foundstate == "TX") {
+	} else if(foundstate == "TX") {
 		return "Lewis";
-	}
-	if(foundstate == "NY") {
+	} else if(foundstate == "NY") {
 		return "Ashley";
-	}
-	if(foundstate == "CA") {
+	} else if(foundstate == "CA" && foundcity == "Oakland") {
 		return "Madison";
+	} else {
+		return "All";
 	}
 }
 
@@ -76,6 +73,8 @@ function modifyForeground(target){
 		photo.src = "Madison.jpeg";
 	} else if (target == "Ashley"){
 		photo.src = "Ashley.jpeg";
+	} else if (target == "All"){
+		photo.src = "plasmaXmas.jpg";
 	}
 }
 
@@ -84,17 +83,21 @@ function getData() {
   var foundstate = geoplugin_region();
   var foundcountry = geoplugin_countryCode();
   var user = getIdentity(foundcity, foundstate, foundcountry);
-  var targets = ["Peter", "Lewis", "Annie", "Somya", "Madison", "Ashley"];
-  var seed = "bingo our lord and savior";
-  var randomized = shuffleSeed.shuffle(targets, seed);
-  var targetIndex = (randomized.indexOf(user) + 1) % targets.length;
+  if(user != "All"){
+	  var targets = ["Peter", "Lewis", "Annie", "Somya", "Madison", "Ashley"];
+	  var seed = "bingo our lord and savior";
+	  var randomized = shuffleSeed.shuffle(targets, seed);
+	  var targetIndex = (randomized.indexOf(user) + 1) % targets.length;
 
-  var assigned = document.getElementById('assignment');
-  var welcome = document.getElementById('welcome');
-  var target = randomized[targetIndex];
-  modifyForeground(target);
-
-  welcome.innerHTML = "Welcome " + user + "!";
-  assigned.innerHTML = "your target is: " + target;
+	  var assigned = document.getElementById('assignment');
+	  var welcome = document.getElementById('welcome');
+	  var target = randomized[targetIndex];
+	  modifyForeground(target);
+	  welcome.innerHTML = "Welcome " + user + "!";
+	  assigned.innerHTML = "your target is: " + target;
+  } else {
+  	welcome.innerHTML = "Welcome back!";
+  	assigned.innerHTML = "Don't forget to gift your assigned person, and have a fantastic quarter!(:"
+  }
 
 }
