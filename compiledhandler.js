@@ -21112,14 +21112,13 @@ function getData() {
   var foundstate = geoplugin_region();
   var foundcountry = geoplugin_countryCode();
   var user = getIdentity(foundcity, foundstate, foundcountry);
+  var assigned = document.getElementById('assignment');
+  var welcome = document.getElementById('welcome');
   if(user != "All"){
 	  var targets = ["Peter", "Lewis", "Annie", "Somya", "Madison", "Ashley"];
 	  var seed = "bingo our lord and savior";
 	  var randomized = shuffleSeed.shuffle(targets, seed);
 	  var targetIndex = (randomized.indexOf(user) + 1) % targets.length;
-
-	  var assigned = document.getElementById('assignment');
-	  var welcome = document.getElementById('welcome');
 	  var target = randomized[targetIndex];
 	  modifyForeground(target);
 	  welcome.innerHTML = "Welcome " + user + "!";
