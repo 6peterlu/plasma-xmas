@@ -21114,11 +21114,9 @@ function getData() {
   var foundcountry = geoplugin_countryCode();
   var user = getIdentity(foundcity, foundstate, foundcountry);
   var targets = ["Peter", "Lewis", "Annie", "Somya", "Madison", "Ashley"];
-  var seed = "p-love";
+  var seed = "bingo our lord and savior";
   var randomized = shuffleSeed.shuffle(targets, seed);
   var targetIndex = (randomized.indexOf(user) + 1) % targets.length;
-  console.log(targetIndex)
-  console.log(randomized)
 
   var assigned = document.getElementById('assignment');
   var welcome = document.getElementById('welcome');
