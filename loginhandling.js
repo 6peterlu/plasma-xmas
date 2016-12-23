@@ -4,6 +4,9 @@ var foundcity;
 var foundstate;
 var foundcountry;
 
+var locationMap = {};
+locationMap["Vancouver,"] = "Peter";
+
 function httpGet(theUrl)
 {
     var xmlHttp = new XMLHttpRequest();
@@ -17,6 +20,7 @@ function getData() {
   foundstate = geoplugin_region();
   foundcountry = geoplugin_countryCode();
   var assigned = document.getElementById('assigned');
-  assigned.innerHTML = foundcity;
+  assigned.innerHTML = foundcity + "," + foundstate + "," + foundcountry;
+
 }
 
