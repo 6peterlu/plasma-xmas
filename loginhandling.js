@@ -45,7 +45,7 @@ function randomShuffle(ar,seed){
 
 function randomize(targets) {
 	var seed = seeder();
-	seed.set(arr.length);
+	seed.set(targets.length);
 	return randomShuffle(targets, seed.get);
 }
 
