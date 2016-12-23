@@ -15,6 +15,10 @@ function httpGet(theUrl)
     return xmlHttp.responseText;
 }
 
+function getIdentity(city, state, country){
+	
+}
+
 function getData() {
   foundcity = geoplugin_city();
   foundstate = geoplugin_region();
