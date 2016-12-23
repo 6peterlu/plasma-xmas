@@ -11,5 +11,11 @@ app.get("/loginhandling.js", function (request, response) {
 app.get("/compiledhandler.js", function (request, response) {
   response.sendFile(p.join(__dirname + '/compiledhandler.js'));
 });
+app.get("/plasmaXmas.jpg", function (request, response) {
+	response.sendFile(p.join(__dirname + '/res/plasmaXmas.jpg'));
+});
+app.get("/elfHeader.gif", function (request, response) {
+	response.sendFile(p.join(__dirname + '/res/elfHeader.gif'));
+});
 
 app.listen(process.env.PORT || 5000)
