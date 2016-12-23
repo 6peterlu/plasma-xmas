@@ -9,6 +9,46 @@ function getIdentity(foundcity, foundstate, foundcountry){
 	if(foundstate == "CA") return "Madison";
 }
 
+
+
+var seeder = function(){
+ var seed = [];
+ return {
+  set:function(length){
+    for( var i = 0; i < length; i++ ){
+        seed.push(Math.random());
+    }
+    return seed;
+  },
+  get: function(){
+   return seed;
+  },
+  clear: function(){
+   seed = []; 
+  }
+ };
+}
+
+function randomShuffle(ar,seed){
+	var numbers = [];
+	for( var a = 0, max = ar.length; a < max; a++){
+		numbers.push(a);
+	}
+	var shuffled = [];
+	for( var i = 0, len = ar.length; i < len; i++ ){
+	    var r = parseInt(seed[i] * (len - i));
+	    shuffled.push(ar[numbers[r]]);
+	    numbers.splice(r,1);
+	}
+	return shuffled;
+}
+
+function randomize(targets) {
+	var seed = seeder();
+	seed.set(arr.length);
+	return randomShuffle(targets, seed.get);
+}
+
 function getData() {
   var foundcity = geoplugin_city();
   var foundstate = geoplugin_region();
@@ -23,4 +63,3 @@ function getData() {
   welcome.innerHTML = "Welcome " + user + "!";
   assigned.innerHTML = "your target is: " + randomized[targetIndex];
 }
-
