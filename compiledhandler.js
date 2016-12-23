@@ -21031,29 +21031,22 @@ var shuffleSeed = require('shuffle-seed')
 window.onload = getData;
 
 function getIdentity(foundcity, foundstate, foundcountry){
-	var photo = document.getElementById('photo');
 	if(foundcountry == "IN") {
-		photo.src = "Somya.jpeg";
 		return "Somya";
 	}
-	if(foundstate == "WA") {
-		photo.src = "Peter.jpeg";
+	if(foundstate == "WA") {	
 		return "Peter";
 	}
 	if(foundstate == "MD") {
-		photo.src = "Annie.jpeg";
 		return "Annie";
 	}
 	if(foundstate == "TX") {
-		photo.src = "Lewis.jpeg";
 		return "Lewis";
 	}
 	if(foundstate == "NY") {
 		photo.src = "Ashley.jpeg";
-		return "Ashley";
 	}
 	if(foundstate == "CA") {
-		photo.src = "Madison.jpeg";
 		return "Madison";
 	}
 }
@@ -21098,6 +21091,22 @@ function randomize(targets) {
 	return randomShuffle(targets, seed.get);
 }
 */
+function modifyForeground(target){
+	var photo = document.getElementById('photo');
+	if(target == "Somya"){
+		photo.src = "Somya.jpeg";
+	} else if (target == "Annie"){
+		photo.src = "Annie.jpeg";
+	} else if (target == "Peter"){
+		photo.src = "Peter.jpeg";
+	} else if (target == "Lewis"){
+		photo.src = "Lewis.jpeg";
+	} else if (target == "Madison"){
+		photo.src = "Madison.jpeg";
+	} else if (target == "Ashley"){
+		return "Ashley";
+	}
+}
 
 function getData() {
   var foundcity = geoplugin_city();
@@ -21113,9 +21122,11 @@ function getData() {
 
   var assigned = document.getElementById('assignment');
   var welcome = document.getElementById('welcome');
+  var target = randomized[targetIndex];
+  modifyForeground(target);
 
   welcome.innerHTML = "Welcome " + user + "!";
-  assigned.innerHTML = "your target is: " + randomized[targetIndex];
+  assigned.innerHTML = "your target is: " + target;
 
 }
 
