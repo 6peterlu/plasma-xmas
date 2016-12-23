@@ -58,6 +58,7 @@ function getData() {
   var randomized = randomize(targets);
   var targetIndex = (randomized.indexOf(user) + 1) % targets.length;
   console.log(targetIndex)
+  console.log(randomized)
 
   var assigned = document.getElementById('assignment');
   var welcome = document.getElementById('welcome');
