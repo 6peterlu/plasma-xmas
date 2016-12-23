@@ -9,5 +9,8 @@ app.get("/", function (request, response) {
 app.get("/loginhandling.js", function (request, response) {
   response.sendFile(p.join(__dirname + '/loginhandling.js'));
 });
+app.get("/compiledhandler.js", function (request, response) {
+  response.sendFile(p.join(__dirname + '/compiledhandler.js'));
+});
 
 app.listen(process.env.PORT || 5000)
