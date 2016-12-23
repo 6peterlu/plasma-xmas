@@ -15,7 +15,7 @@ function getIdentity(foundcity, foundstate, foundcountry){
 		return "Lewis";
 	}
 	if(foundstate == "NY") {
-		photo.src = "Ashley.jpeg";
+		return "Ashley";
 	}
 	if(foundstate == "CA") {
 		return "Madison";
@@ -75,7 +75,7 @@ function modifyForeground(target){
 	} else if (target == "Madison"){
 		photo.src = "Madison.jpeg";
 	} else if (target == "Ashley"){
-		return "Ashley";
+		photo.src = "Ashley.jpeg";
 	}
 }
 
