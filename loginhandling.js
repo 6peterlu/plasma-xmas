@@ -19,8 +19,7 @@ function getData() {
   foundcity = geoplugin_city();
   foundstate = geoplugin_region();
   foundcountry = geoplugin_countryCode();
-  var assigned = document.getElementById('assigned');
+  var assigned = document.getElementById('assignment');
   assigned.innerHTML = foundcity + "," + foundstate + "," + foundcountry;
-
 }
 
