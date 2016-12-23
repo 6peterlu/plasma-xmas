@@ -56,6 +56,8 @@ function getData() {
   var foundstate = geoplugin_region();
   var foundcountry = geoplugin_countryCode();
   var user = getIdentity(foundcity, foundstate, foundcountry);
+  //if user == annie, photo = annie specific photo
+  //repeat 5 more times...
   var targets = ["Peter", "Lewis", "Annie", "Somya", "Madison", "Ashley"];
   var seed = "p-love";
   var randomized = shuffleSeed.shuffle(targets, seed);
@@ -65,6 +67,8 @@ function getData() {
 
   var assigned = document.getElementById('assignment');
   var welcome = document.getElementById('welcome');
+  //var photo = document.getElementById('photo');
+
   welcome.innerHTML = "Welcome " + user + "!";
   assigned.innerHTML = "your target is: " + randomized[targetIndex];
 }
