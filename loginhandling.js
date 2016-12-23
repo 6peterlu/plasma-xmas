@@ -7,11 +7,11 @@ function getIdentity(foundcity, foundstate, foundcountry){
 		photo.src = "Somya.jpeg";
 		return "Somya";
 	}
-	if(foundstate == "WA") {}
+	if(foundstate == "WA") {
 		photo.src = "Peter.jpeg";
 		return "Peter";
 	}
-	if(foundstate == "MD") {}
+	if(foundstate == "MD") {
 		photo.src = "Annie.jpeg";
 		return "Annie";
 	}
@@ -19,7 +19,7 @@ function getIdentity(foundcity, foundstate, foundcountry){
 		photo.src = "Lewis.jpeg";
 		return "Lewis";
 	}
-	if(foundstate == "NY") {}
+	if(foundstate == "NY") {
 		photo.src = "Ashley.jpeg";
 		return "Ashley";
 	}
