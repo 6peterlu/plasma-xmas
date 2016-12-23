@@ -17,7 +17,7 @@ app.get("/plasmaXmas.jpg", function (request, response) {
 app.get("/elfHeader.gif", function (request, response) {
 	response.sendFile(p.join(__dirname + '/res/elfHeader.gif'));
 });
-app.get("/myFavicon", function (request, response) {
-	response.sendFile(p.join(__dirname + '/res/myFavicon'));
+app.get("/myFavicon.ico", function (request, response) {
+	response.sendFile(p.join(__dirname + '/res/myFavicon.ico'));
 });
 app.listen(process.env.PORT || 5000)
