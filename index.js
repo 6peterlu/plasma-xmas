@@ -14,6 +14,24 @@ app.get("/compiledhandler.js", function (request, response) {
 app.get("/plasmaXmas.jpg", function (request, response) {
 	response.sendFile(p.join(__dirname + '/res/plasmaXmas.jpg'));
 });
+app.get("/Ashley.jpeg", function (request, response) {
+	response.sendFile(p.join(__dirname + '/res/Ashley.jpeg'));
+});
+app.get("/Annie.jpeg", function (request, response) {
+	response.sendFile(p.join(__dirname + '/res/Annie.jpeg'));
+});
+app.get("/Peter.jpeg", function (request, response) {
+	response.sendFile(p.join(__dirname + '/res/Peter.jpeg'));
+});
+app.get("/Lewis.jpeg", function (request, response) {
+	response.sendFile(p.join(__dirname + '/res/Lewis.jpeg'));
+});
+app.get("/Madison.jpeg", function (request, response) {
+	response.sendFile(p.join(__dirname + '/res/Madison.jpeg'));
+});
+app.get("/Somya.jpeg", function (request, response) {
+	response.sendFile(p.join(__dirname + '/res/Somya.jpeg'));
+});
 app.get("/elfHeader.gif", function (request, response) {
 	response.sendFile(p.join(__dirname + '/res/elfHeader.gif'));
 });

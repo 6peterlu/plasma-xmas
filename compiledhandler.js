@@ -21031,12 +21031,31 @@ var shuffleSeed = require('shuffle-seed')
 window.onload = getData;
 
 function getIdentity(foundcity, foundstate, foundcountry){
-	if(foundcountry == "IN") return "Somya";
-	if(foundstate == "WA") return "Peter";
-	if(foundstate == "MD") return "Annie";
-	if(foundstate == "TX") return "Lewis";
-	if(foundstate == "NY") return "Ashley";
-	if(foundstate == "CA") return "Madison";
+	var photo = document.getElementById('photo');
+	if(foundcountry == "IN") {
+		photo.src = "Somya.jpeg";
+		return "Somya";
+	}
+	if(foundstate == "WA") {
+		photo.src = "Peter.jpeg";
+		return "Peter";
+	}
+	if(foundstate == "MD") {
+		photo.src = "Annie.jpeg";
+		return "Annie";
+	}
+	if(foundstate == "TX") {
+		photo.src = "Lewis.jpeg";
+		return "Lewis";
+	}
+	if(foundstate == "NY") {
+		photo.src = "Ashley.jpeg";
+		return "Ashley";
+	}
+	if(foundstate == "CA") {
+		photo.src = "Madison.jpeg";
+		return "Madison";
+	}
 }
 
 /*
@@ -21094,8 +21113,10 @@ function getData() {
 
   var assigned = document.getElementById('assignment');
   var welcome = document.getElementById('welcome');
+
   welcome.innerHTML = "Welcome " + user + "!";
   assigned.innerHTML = "your target is: " + randomized[targetIndex];
+
 }
 
 },{"shuffle-seed":144}],136:[function(require,module,exports){
