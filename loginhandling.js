@@ -1,4 +1,3 @@
-var shuffleSeed = require('shuffle-seed');
 window.onload = getData;
 
 function getIdentity(foundcity, foundstate, foundcountry){
