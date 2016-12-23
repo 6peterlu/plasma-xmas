@@ -5,7 +5,7 @@ var foundstate;
 var foundcountry;
 
 var locationMap = {};
-locationMap["Vancouver,"] = "Peter";
+locationMap["Vancouver,WA,US"] = "Peter";
 
 function httpGet(theUrl)
 {
