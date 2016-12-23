@@ -1,5 +1,7 @@
 window.onload = getData;
 
+var shuffleSeed = require('shuffle-seed');
+
 function getIdentity(foundcity, foundstate, foundcountry){
 	if(foundcountry == "IN") return "Somya";
 	if(foundstate == "WA") return "Peter";
@@ -9,8 +11,8 @@ function getIdentity(foundcity, foundstate, foundcountry){
 	if(foundstate == "CA") return "Madison";
 }
 
-
-
+/*
+Annie's hard work is commemorated here
 var seeder = function(){
  var seed = [];
  return {
@@ -48,6 +50,7 @@ function randomize(targets) {
 	seed.set(targets.length);
 	return randomShuffle(targets, seed.get);
 }
+*/
 
 function getData() {
   var foundcity = geoplugin_city();
@@ -55,7 +58,8 @@ function getData() {
   var foundcountry = geoplugin_countryCode();
   var user = getIdentity(foundcity, foundstate, foundcountry);
   var targets = ["Peter", "Lewis", "Annie", "Somya", "Madison", "Ashley"];
-  var randomized = randomize(targets);
+  var seed = "p-love";
+  var randomized = shuffleSeed.shuffle(targets, seed);
   var targetIndex = (randomized.indexOf(user) + 1) % targets.length;
   console.log(targetIndex)
   console.log(randomized)
